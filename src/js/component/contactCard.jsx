@@ -25,7 +25,7 @@ export const Contact = () => {
 	return (
 
 		<div>
-			{store.Contacts.length === 0 && <span className="m-5 p-5 text-danger">No exists contact</span>}
+			{store.Contacts?.length === 0 && <span className="m-5 p-5 text-danger">No exists contact</span>}
 			{store.Contacts.map((contact) => {
 				return (
 					<div key={contact.id} className="row border rounded m-2">
@@ -39,13 +39,13 @@ export const Contact = () => {
 								</div>
 								<div className="col text-secondary">
 									<div className="d-flex align-items-center">
-										<i class="fa-solid fa-phone"></i> {contact.phone}
+										<i className="fa-solid fa-phone"></i> {contact.phone}
 									</div>
 									<div className="d-flex align-items-center">
-										<i class="fa-solid fa-address-book"></i> {contact.address}
+										<i className="fa-solid fa-address-book"></i> {contact.address}
 									</div>
 									<div className="d-flex align-items-center">
-										<i class="fa-solid fa-envelope"></i> {contact.email}
+										<i className="fa-solid fa-envelope"></i> {contact.email}
 									</div>
 								</div>
 							</div>
