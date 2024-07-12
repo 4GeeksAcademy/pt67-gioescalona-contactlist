@@ -19,7 +19,7 @@ export const Contact = () => {
 	}
 
 	function idUpdateContact(id, name, address, phone, email) {
-		actions.setIdForUpdate(id, name, address, phone, email)
+		actions.setIdForUpdate(id, name, address, phone, email);
 	}
 
 	return (
@@ -51,9 +51,13 @@ export const Contact = () => {
 							</div>
 						</div>
 						<div className="container-fluid d-flex justify-content-end mb-2 mt-2">
-							<div className="d-flex align-items-start mt-3">
-								<Link to="/updateContact"><button onClick={() => idUpdateContact(contact.id, contact.name, contact.address, contact.phone, contact.email)} className="btn"></button><i class="fa-solid fa-pen-to-square"></i> </Link>
-							</div>
+						<div className="d-flex align-items-start mt-3">
+    <Link to="/updateContact">
+        <button onClick={() => idUpdateContact(contact.id, contact.name, contact.address, contact.phone, contact.email)} className="btn">
+            <i className="fa-solid fa-pen-to-square"></i>
+        </button>
+    </Link>
+</div>
 							<div className="d-flex align-items-start mt-3">
 								<button onClick={() => deleteOneContact(contact.id)} className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-trash"></i></button>
 							</div>

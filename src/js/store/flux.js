@@ -82,15 +82,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 						email: email,
 						address: address
 					},
-				})
+				});
 			},
 
 
 			putContact: async (inputName, inputPhone, inputEmail, inputAddress) => {
 				const actions = getActions();
 				const store = getStore();
+				if (!store.contact2){
+					alert("no se ha seleccionado un contacto para actualizar");
+					return;
+				}
 				
-				const response = await fetch('https://playground.4geeks.com/contact/agendas/GioEscalona/contacts/' + `${store.contact2.id}`, {
+				
+				const response = await fetch('https://playground.4geeks.com/contact/agendas/GioEscalona/contacts/' + store.contact2.id, {
 					method: "PUT",
 					body: JSON.stringify({
 						name: inputName,
@@ -101,7 +106,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					headers: {
 						'Content-Type': 'application/json'
 					}
-				})
+				});
 				if (response.ok) {
 					alert("contacto actualizado correctamente")
 					actions.getContacts();

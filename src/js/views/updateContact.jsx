@@ -17,7 +17,7 @@ export const UpdateContact = () => {
         setAddress(store.contact2.address);
     }, [store.contact2]);
 
-    function handleSubmit(e) {
+    const handleSubmit =(e) => {
         e.preventDefault();
         actions.putContact(name, phone, email, address);
     }
